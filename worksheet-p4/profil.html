@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA PROFIL — PABW 2026/2027 — Pertemuan 4
+  ==================================================================
+  Berkas ini SUDAH LENGKAP dan sudah lolos W3C Nu Html Checker serta
+  Lighthouse Accessibility. JANGAN mengubah struktur, landmark, label,
+  atau alt untuk memperbaiki tampilan — tampilan diubah dari berkas CSS.
+
+  Tugas Anda di Pertemuan 4:
+    1. Ganti isi yang ditandai  [ISI]  dengan milik Anda sendiri.
+    2. Buat lima berkas CSS di folder css/ lalu buka komentar
+       lima baris <link> di bawah  (lihat Lembar D).
+    3. WAJIB — tambahkan MINIMAL TIGA bagian baru di dalam <main>,
+       masing-masing memakai elemen semantik yang belum terpakai dan
+       berbeda satu sama lain  (lihat Lembar B.3). Setiap bagian wajib
+       diberi gaya memakai token yang sama, lalu dievaluasi W3C dan WCAG.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <!-- ISI 1 — judul tab dan hasil pencarian. Ganti dengan nama Anda. -->
+  <title>DANIS SETIYAWAN — PABW 2026/2027</title>
+  <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
+
+  <!-- LEMBAR D — buat lima berkas di folder css/, lalu buka komentar ini.
+       URUTAN PEMUATAN MENENTUKAN CASCADE: tokens, base, layout, komponen, tema.
+       Lapisan paling bawah menang tanpa perlu !important. -->
+  <link rel="stylesheet" href="css/token.css"> 
+  <link rel="stylesheet" href="css/base.css"> 
+  <link rel="stylesheet" href="css/layout.css"> 
+  <link rel="stylesheet" href="css/komponen.css"> 
+  <link rel="stylesheet" href="css/tema.css">
+</head>
+<body>
+  <a class="lewati" href="#utama">Lewati ke konten utama</a>
+
+  <header class="kepala">
+    <!-- ISI 2 — nama Anda, atau nama panggilan yang Anda pakai. -->
+    <h1>DANIS SETIYAWAN</h1>
+    <!-- ISI 3 — satu kalimat tentang diri Anda. -->
+    <p class="tagline">Informatics Undergraduate Student at Universitas Islam Indonesia| Host Coordinator at Buzzlive | Network Technician | Digital Business</p>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#karya">Karya</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+      <!-- Lembar H.2 — pengalih tema tanpa JavaScript, memakai :has() -->
+      <input type="checkbox" id="tema" class="pengalih-tema">
+      <label for="tema" class="tombol-tema">
+        <span aria-hidden="true">🌓</span> Tema gelap
+      </label>
+    </div>
+  </header>
+
+  <main id="utama">
+
+    <section id="tentang">
+      <h2>Tentang saya</h2>
+
+      <figure class="foto">
+        <!-- ISI 4 — pakai foto Anda sendiri dengan nama berkas yang sama,
+             atau biarkan berkas contoh apa adanya. -->
+        <img src="media/foto-profil.jpg"
+             alt="foto saya"
+             width="480" height="480" loading="lazy">
+        <figcaption>Foto profil </figcaption>
+      </figure>
+
+      <!-- ISI 5 — dua sampai tiga kalimat: asal, minat, dan hal yang
+           sedang Anda pelajari. -->
+      <p> Saya Danis Setiyawan, mahasiswa Program Studi Informatika Universitas Islam Indonesia.
+  Sebelumnya saya belajar TKJ dan tertarik pada jaringan komputer, lalu memperluas minat
+  ke pengembangan web, UI/UX, Java, dan data science. Saat ini saya sedang memperkuat
+  kemampuan front-end, CSS, pemrograman, dan jaringan sambil mengembangkan pengalaman kerja
+  sebagai Host Coordinator Buzzlive</p>
+
+     <div class="tabel-bungkus">
+      <table>
+        <!-- ISI 6 — judul tabel dan isi minimal tiga baris. -->
+        <caption>Kegiatan yang saya ikuti semester ini</caption>
+        <thead>
+          <tr>
+            <th scope="col">Kegiatan</th>
+            <th scope="col">Peran</th>
+            <th scope="col">Waktu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Praktikum PABW</th>
+            <td>Peserta</td>
+            <td><time datetime="2026-09">September 2026</time></td>
+          </tr>
+          <tr>
+            <th scope="row">Sistem Jaringan Dan Komputer</th>
+            <td>Belajar</td>
+            <td><time datetime="2026-10">September 2026</time></td>
+          </tr>
+          <tr>
+            <th scope="row"> Mencari Lomba/ seminar tentang program IT</th>
+            <td>Peserta</td>
+            <td><time datetime="2026">2026</time></td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+    </section>
+
+    <section id="karya">
+      <h2>Karya saya</h2>
+      <!-- ISI 7 — tiga karya, proyek, atau hal yang pernah Anda buat.
+           Boleh tugas kuliah, karya pribadi, atau hobi. -->
+      <ul>
+        <li>Proyek Hako Tjeria - membangun aplikasi untuk mengatur stock bahan baku</li>
+        <li>Proyek UI/UX Figma - merancang antarmuka dan alur tampilan aplikasi</li>
+        <li> Proyek operasional Buzzlive - koordinasi live dan evaluasi pelanggaran untuk membantu mengurangi violation TikTok</li>
+      </ul>
+    </section>
+
+    <section id="kontak">
+      <h2>Hubungi saya</h2>
+      <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Data pengirim</legend>
+
+          <p>
+            <label for="nama">NAMA</label>
+            <input id="nama" name="nama" type="text"
+                   autocomplete="name" required>
+          </p>
+
+          <p>
+            <label for="email">EMAIL</label>
+            <input id="email" name="email" type="email"
+                   autocomplete="email" required>
+          </p>
+
+           <p class="form-kolom">
+            <label for="nim">NIM</label>
+            <!-- ISI 8 — ganti angka di dalam pattern dengan NIM Anda sendiri. -->
+            <input id="nim" name="nim" type="text" inputmode="numeric"
+                   pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+            <span id="nim-bantuan" class="teks-bantu">Delapan digit angka, contoh 25523072 </span>
+            <span class="pesan-galat" role="alert">Periksa lagi: NIM harus berupa angka sesuai jumlah digit yang diminta.</span>
+          </p>
+
+          <p class="form-kolom">
+            <label for="pesan">PESAN</label>
+            <textarea id="pesan" name="pesan" rows="4" required></textarea>
+          </p>
+
+          <button type="submit">KIRIM</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <!--1.  Struktur Tambahan pilhan ke 3 (linimasa) -->
+    <section id=
+    "lini-masa">
+      <h2>Perjalanan saya</h2>
+      <!-- [ISI: LINI MASA] — ganti tanggal dan ceritanya dengan milik Anda -->
+      <ol class="lini">
+        <li><time datetime="2022-027">Juli 2022</time> - mulai menempuh pendidikan di SMK pada bidang Teknik Komputer dan Jaringan (TKJ)</li>
+        <li><time datetime="2025-08">Agustus 2025</time> - melanjutkan pendidikan di Program Studi Informatika, Universitas Islam Indonesia</li>
+        <li><time datetime="2026-02">Februari 2026</time> - mulai mendapatkan pengalaman kerja part-time sebagai Host Coordinator dan Live Host di Buzzlive</li>
+      </ol>
+    </section>
+
+    <!--2.  Struktur Tambahan pilihan ke 4 (keterampilan) -->
+    <section id="keterampilan">
+      <h2>Keterampilan</h2>
+      <!-- [ISI: KETERAMPILAN] — ganti dengan keterampilan Anda sendiri -->
+      <dl class="keterampilan">
+        <dt>Jaringan komputer</dt>
+        <dd>Memiliki dasar dari pembelajaran TKJ dan pengalaman teknisi WiFi,
+serta sedang memperdalam materi jaringan di perkuliahan</dd>
+
+        <dt>UI/UX </dt>
+        <dd>Pernah mengerjakan proyek perancangan antarmuka menggunakan Figma
+dan mempelajari dasar proses UI/UX</dd>
+
+        <dt>Komunikasi dan Kerja Sama Tim</dt>
+        <dd>Terbiasa bekerja dalam tim, berkomunikasi dengan berbagai pihak, dan menyelesaikan tugas sesuai target yang telah ditentukan</dd>
+      </dl>
+    </section>
+
+    <!--3.  Struktur Tambahan pilihan ke 1 (tanya jawab) -->
+    <section id="tanya-jawab">
+      <h2>Tanya jawab</h2>
+
+      <details>
+        <summary>Apa yang membuat saya tertarik pada dunia teknologi?</summary>
+        <p>Sejak belajar di jurusan TKJ saat SMK, saya mulai tertarik pada komputer dan jaringan. Ketertarikan tersebut terus berkembang hingga saya memilih melanjutkan studi di bidang Informatika</p>
+      </details>
+
+      <details>
+        <summary>Mengapa saya memilih Informatika?</summary>
+        <p>Saya ingin memperluas pengetahuan yang sebelumnya saya pelajari di bidang jaringan ke bidang lain seperti pemrograman, pengembangan web, UI/UX, dan data science</p>
+      </details>
+
+      <details>
+        <summary>Apa yang sedang saya kembangkan saat ini?</summary>
+        <p>Saya sedang membangun portofolio pribadi di linkedln dan memperdalam kemampuan pemrograman serta mengembangkan keterampilan di bidang web dan jaringan komputer</p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="kaki">
+    <!-- ISI 9 — nama, NIM, tahun. -->
+    <p>Danis Setiyawan · 25523072 · <time datetime="2026">2026</time></p>
+  </footer>
+</body>
+</html>
