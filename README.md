@@ -36,6 +36,11 @@ saya menggunakan AI untuk, pertama : menjelaskan todo yang harus saya lakukan di
 - WCAG — kontras AA tema gelap (belum diketahui)
 - WCAG — navigasi tab lolos
 
+## Struktur tambahan ##
+1. linimasa
+2. keterampilan
+3. tanya jawab
+
 ## Waktu
 
 90 menit di kelas hanya cukup sampai Lembar D: tiga struktur sudah berdiri,
