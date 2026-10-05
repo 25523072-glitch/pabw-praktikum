@@ -1,0 +1,252 @@
+/* ==========================================================
+   komponen.css — Pertemuan 5
+   Isi komponen = FLEX. Galeri = GRID, jumlah kolom di responsif.css.
+   ========================================================== */
+
+/* Foto profil: figure disusun flex kolom, jarak lewat gap */
+.foto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.foto img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+.foto figcaption {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+/* Tabel data */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+th, td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+thead th {
+  background: var(--color-bg);
+  font-weight: 700;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Form */
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  min-width: 0;                 /* fieldset bawaan tidak mau menyusut */
+}
+
+legend {
+  font-weight: 700;
+  padding-inline: var(--space-2);
+}
+
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, textarea {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  max-width: 100%;
+}
+
+.teks-bantu {
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-primary-fg);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(1.08);
+}
+
+/* fokus wajib terlihat */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* isian tidak sah, hanya setelah disentuh pengguna */
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+.pesan-galat {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.form-kolom:has(:user-invalid) .pesan-galat {
+  display: block;
+}
+
+/* ---------- C.1 Galeri: jumlah kolom diatur di responsif.css ---------- */
+.galeri {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* ---------- C.2 + E.1 Kartu: tinggi seragam, isi disusun grid/flex ---------- */
+.galeri .kartu {
+  display: grid;
+  grid-template-rows: auto 1fr auto;   /* judul, isi lentur, kaki menempel di dasar */
+  gap: var(--space-2);
+  min-height: 14rem;
+  padding: var(--card-pad);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+/* E.2 isi panjang boleh menyusut, teks membungkus */
+.kartu > * {
+  min-width: 0;
+}
+
+.kartu h3,
+.kartu p {
+  overflow-wrap: anywhere;
+}
+
+.kartu h3 {
+  color: var(--color-primary);
+}
+
+.kartu p {
+  color: var(--color-muted);
+}
+
+/* baris kaki kartu: flex, sumbu utama horizontal */
+.kartu-kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.label {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+
+/* Kartu sorotan melebar dua jalur: aturannya ada di responsif.css
+   (min-width: 48rem), saat galeri sudah punya dua kolom. */
+
+/* ---------- Lini masa ---------- */
+.lini {
+  list-style: none;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lini li {
+  padding-left: var(--space-2);
+}
+
+.lini time {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+}
+
+/* ---------- Keterampilan ---------- */
+.keterampilan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.keterampilan dt {
+  font-weight: 700;
+}
+
+.keterampilan dd {
+  padding-left: var(--space-4);
+  padding-bottom: var(--space-3);
+  color: var(--color-muted);
+}
+
+/* ---------- Tanya jawab ---------- */
+#tanya-jawab details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+}
+
+#tanya-jawab summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#tanya-jawab details[open] summary {
+  padding-bottom: var(--space-2);
+  color: var(--color-primary);
+}
