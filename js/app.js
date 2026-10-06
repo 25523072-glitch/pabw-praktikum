@@ -1,6 +1,6 @@
 // ---------- LEMBAR B — data halaman sebagai variabel ----------------
 
-// Daftar keahlian: array of object. Satu object = satu keahlian.
+// Daftar keahlian
 const daftarKeahlian = [
   {
     nama: "Jaringan komputer",
@@ -53,7 +53,7 @@ const daftarProyek = [
   },
 ];
 
-// Identitas: satu object. Ditulis sekali, dipakai di <title>, <h1>, footer.
+// Identitas: satu object
 const profil = {
   nama: "DANIS SETIYAWAN",
   nim: "25523072",
@@ -62,13 +62,11 @@ const profil = {
     "Informatics Undergraduate Student at Universitas Islam Indonesia | " +
     "Host Coordinator at Buzzlive | Network Technician | Digital Business",
   tahun: 2026,
-  keahlian: daftarKeahlian.map((k) => k.nama), // map: object -> teks
-  jumlahProyek: daftarProyek.length, // angka sungguhan, bukan "3"
+  keahlian: daftarKeahlian.map((k) => k.nama), 
+  jumlahProyek: daftarProyek.length, 
 };
 
 // ---------- LEMBAR C — fungsi murni ---------------------------------
-// Murni = hasil hanya bergantung pada argumen, tidak mengubah apa pun
-// di luar dirinya, selalu memakai return.
 
 // 1. Menyusun kalimat perkenalan dari satu object
 function buatPerkenalan({ nama, peran }) {
