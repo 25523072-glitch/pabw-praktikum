@@ -1,4 +1,4 @@
-// ---------- LEMBAR B — data halaman sebagai variabel ----------------
+//LEMBAR B — data halaman sebagai variabel
 
 // Daftar keahlian
 const daftarKeahlian = [
@@ -66,7 +66,7 @@ const profil = {
   jumlahProyek: daftarProyek.length, 
 };
 
-// ---------- LEMBAR C — fungsi murni ---------------------------------
+// LEMBAR C — fungsi murni 
 
 // 1. Menyusun kalimat perkenalan dari satu object
 function buatPerkenalan({ nama, peran }) {
@@ -76,7 +76,7 @@ function buatPerkenalan({ nama, peran }) {
 // 2. Merapikan daftar keahlian menjadi satu baris teks
 const formatKeahlian = (daftar, pemisah = " · ") => daftar.join(pemisah);
 
-// 3 & 4. Pembuat potongan HTML (juga murni: hanya mengembalikan teks)
+// 3 & 4. Pembuat potongan HTML 
 const buatKartuProyek = ({ judul, deskripsi, label, sorotan }) => `
         <article class="kartu${sorotan ? " sorotan" : ""}">
           <h3>${judul}</h3>
@@ -90,9 +90,9 @@ const buatKartuProyek = ({ judul, deskripsi, label, sorotan }) => `
 const buatItemKeahlian = ({ nama, deskripsi }) =>
   `<dt>${nama}</dt><dd>${deskripsi}</dd>`;
 
-// ---------- LEMBAR D — mengolah array -------------------------------
+// LEMBAR D — mengolah array 
 
-// map: array baru, panjang sama (object -> potongan HTML)
+// map: array baru, panjang sama
 const htmlKartu = daftarProyek.map(buatKartuProyek).join("");
 const htmlKeahlian = daftarKeahlian.map(buatItemKeahlian).join("");
 
@@ -104,14 +104,13 @@ const proyekFigma = daftarProyek.find(
   (proyek) => proyek.judul === "Proyek UI/UX Figma"
 );
 
-// Mengurutkan harus pada SALINAN — sort mengubah array aslinya.
+// Mengurutkan harus pada SALINAN 
 const proyekUrut = [...daftarProyek].sort((a, b) =>
   a.judul.localeCompare(b.judul)
 );
 
-// ---------- Tampilkan ke halaman ------------------------------------
-
-// Mengambil elemen; bila tidak ada, jelaskan di Console (bukan diam saja)
+// Tampilkan ke halaman
+// Mengambil elemen; bila tidak ada
 function ambil(selector) {
   const elemen = document.querySelector(selector);
   if (elemen === null) {
@@ -146,7 +145,7 @@ function isiHalaman() {
 
 isiHalaman();
 
-// ---------- Pemeriksaan di Console (bukti Lembar B, C, D, E) --------
+// Pemeriksaan di Console 
 
 function periksaData() {
   console.log("== B: sintaks dan tipe ==");
@@ -158,7 +157,7 @@ function periksaData() {
 
   console.log("== C: fungsi murni ==");
   console.log(buatPerkenalan(profil));
-  console.log(buatPerkenalan({ nama: "Ayu", peran: "mahasiswa" }));
+  console.log(buatPerkenalan({ nama: "Danis", peran: "mahasiswa" }));
   console.log(formatKeahlian(profil.keahlian));
   console.log(formatKeahlian(["HTML", "CSS"], " / "));
 
