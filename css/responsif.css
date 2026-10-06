@@ -1,24 +1,43 @@
 /* dasar: berlaku di semua lebar */
-.isi {                              
+.isi {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
 
-.galeri {                          
+.galeri {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
 
-.page { grid-template-columns: minmax(0, 1fr); }
-h1, h2, h3, dt, dd, summary, li { overflow-wrap: anywhere; }
-nav ul { flex-wrap: wrap; }
+.page {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+h1,
+h2,
+h3,
+dt,
+dd,
+summary,
+li {
+  overflow-wrap: anywhere;
+}
+
+nav ul {
+  flex-wrap: wrap;
+}
 
 /* tablet */
 @media (min-width: 48rem) {
-  .galeri { grid-template-columns: repeat(2, 1fr); }
-  .galeri .sorotan { grid-column: span 2; }   
+  .galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeri .sorotan {
+    grid-column: span 2;
+  }
 }
 
 /* desktop */
@@ -40,6 +59,11 @@ nav ul { flex-wrap: wrap; }
     gap: var(--space-2);
   }
 
-  .galeri { grid-template-columns: repeat(3, 1fr); }
-  .galeri .sorotan { grid-column: auto; }     
+  .galeri {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .galeri .sorotan {
+    grid-column: auto;
+  }
 }
