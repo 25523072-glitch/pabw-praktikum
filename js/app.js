@@ -48,7 +48,7 @@ const daftarProyek = [
       "mengurangi violation TikTok.",
     label: "Pekerjaan",
     tahun: 2026,
-    selesai: false, 
+    selesai: false,
     sorotan: false,
   },
 ];
@@ -62,8 +62,8 @@ const profil = {
     "Informatics Undergraduate Student at Universitas Islam Indonesia | " +
     "Host Coordinator at Buzzlive | Network Technician | Digital Business",
   tahun: 2026,
-  keahlian: daftarKeahlian.map((k) => k.nama), 
-  jumlahProyek: daftarProyek.length, 
+  keahlian: daftarKeahlian.map((k) => k.nama),
+  jumlahProyek: daftarProyek.length,
 };
 
 // LEMBAR C — fungsi murni 
@@ -131,7 +131,7 @@ function isiHalaman() {
       "footer.kaki p",
       "innerHTML",
       `${profil.nama} · ${profil.nim} · ` +
-        `<time datetime="${profil.tahun}">${profil.tahun}</time>`,
+      `<time datetime="${profil.tahun}">${profil.tahun}</time>`,
     ],
   ];
 
@@ -184,7 +184,7 @@ function periksaData() {
   console.log("== Salinan dangkal ==");
   const salinan = { ...profil };
   salinan.nama = "NAMA UJI";
-  console.log("asli tetap:", profil.nama); 
+  console.log("asli tetap:", profil.nama);
 }
 
 periksaData();

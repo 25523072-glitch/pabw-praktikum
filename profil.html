@@ -38,11 +38,12 @@
   <link rel="stylesheet" href="css/tema.css">
 </head>
 
-<script type="module" src="js/app.js"></script>
-</body>
-
 <body class="page">
   <a class="lewati" href="#utama">Lewati ke konten utama</a>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dom.js"></script>
+
 
   <header class="kepala">
     <!-- ISI 2 — nama Anda, atau nama panggilan yang Anda pakai. -->
@@ -165,6 +166,19 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section>
+        <h2>Proyek</h2>
+
+        <div id="filter">
+          <button data-kategori="semua" class="aktif">Semua</button>
+          <button data-kategori="web">Web</button>
+          <button data-kategori="data">Data</button>
+        </div>
+
+        <ul id="daftar"></ul>
+        <p id="pesan-kosong" hidden>Tidak ada proyek pada kategori itu.</p>
       </section>
 
       <section id="kontak">
