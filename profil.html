@@ -27,9 +27,6 @@
   <!-- Pertemuan 6 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- LEMBAR D — buat lima berkas di folder css/, lalu buka komentar ini.
-       URUTAN PEMUATAN MENENTUKAN CASCADE: tokens, base, layout, komponen, tema.
-       Lapisan paling bawah menang tanpa perlu !important. -->
   <link rel="stylesheet" href="css/token.css"> 
   <link rel="stylesheet" href="css/base.css"> 
   <link rel="stylesheet" href="css/layout.css"> 
@@ -150,38 +147,43 @@
       <h2>Hubungi saya</h2>
       <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
 
-      <form action="#" method="post">
+      <form id="form-kontak" action="#" method="post" novalidate>
         <fieldset>
           <legend>Data pengirim</legend>
 
           <p class="form-kolom">
             <label for="nama">NAMA</label>
             <input id="nama" name="nama" type="text"
-                   autocomplete="name" required>
+                   autocomplete="name" aria-describedby="nama-galat" required>
+            <span id="nama-galat" class="pesan-galat" role="alert"></span>
           </p>
 
           <p class="form-kolom">
             <label for="email">EMAIL</label>
             <input id="email" name="email" type="email"
-                   autocomplete="email" required>
+                   autocomplete="email" aria-describedby="email-galat" required>
+            <span id="email-galat" class="pesan-galat" role="alert"></span>
           </p>
 
            <p class="form-kolom">
             <label for="nim">NIM</label>
             <!-- ISI 8 — ganti angka di dalam pattern dengan NIM Anda sendiri. -->
             <input id="nim" name="nim" type="text" inputmode="numeric"
-                   pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+                   pattern="[0-9]{8}" aria-describedby="nim-bantuan nim-galat" required>
             <span id="nim-bantuan" class="teks-bantu">Delapan digit angka, contoh 25523072 </span>
-            <span class="pesan-galat" role="alert">Periksa lagi: NIM harus berupa angka sesuai jumlah digit yang diminta.</span>
+            <span id="nim-galat" class="pesan-galat" role="alert">Periksa lagi: NIM harus berupa angka sesuai jumlah digit yang diminta.</span>
           </p>
 
           <p class="form-kolom">
             <label for="pesan">PESAN</label>
-            <textarea id="pesan" name="pesan" rows="4" required></textarea>
+            <textarea id="pesan" name="pesan" rows="4"
+                      aria-describedby="pesan-galat" required></textarea>
+            <span id="pesan-galat" class="pesan-galat" role="alert"></span>
           </p>
 
           <button type="submit">KIRIM</button>
         </fieldset>
+        <p id="status-form" role="status"></p>
       </form>
     </section>
 

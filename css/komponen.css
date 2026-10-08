@@ -285,3 +285,18 @@ textarea:user-invalid {
 #status-form {
   color: var(--color-muted);
 }
+
+.pesan-galat.tampil {
+  display: block;
+}
+
+[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}

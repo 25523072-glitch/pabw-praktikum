@@ -43,11 +43,16 @@
   user-select: none;
 }
 
+/* label ikut terlihat "berfokus" saat checkbox di belakangnya berfokus,
+   supaya pengguna papan ketik tetap tahu sedang berada di kontrol ini */
 .pengalih-tema:focus-visible + .tombol-tema {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
+/* Pilihan MANUAL harus ditulis SETELAH blok media query supaya menang
+   saat keduanya menyala bersamaan (mis. sistem gelap, pengguna memilih
+   terang secara manual). */
 :root:has(#tema:checked) {
   --color-bg:         var(--gray-900);
   --color-fg:          #E2E8F0;

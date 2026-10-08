@@ -46,12 +46,11 @@ export const daftarProyek = [
     label: "Pekerjaan",
     kategori: "kerja",
     tahun: 2026,
-    selesai: false, // masih berjalan
+    selesai: false, 
     sorotan: false,
   },
 ];
 
-// Identitas: satu object. Ditulis sekali, dipakai di <title>, <h1>, footer.
 export const profil = {
   nama: "DANIS SETIYAWAN",
   nim: "25523072",
@@ -60,24 +59,21 @@ export const profil = {
     "Informatics Undergraduate Student at Universitas Islam Indonesia | " +
     "Host Coordinator at Buzzlive | Network Technician | Digital Business",
   tahun: 2026,
-  keahlian: daftarKeahlian.map((k) => k.nama), // map: object -> teks
-  jumlahProyek: daftarProyek.length, // angka sungguhan, bukan "3"
+  keahlian: daftarKeahlian.map((k) => k.nama), 
+  jumlahProyek: daftarProyek.length, 
 };
 
 function buatPerkenalan({ nama, peran }) {
   return `${nama} — ${peran}`;
 }
 
+
 const formatKeahlian = (daftar, pemisah = " · ") => daftar.join(pemisah);
 
+const buatItemKeahlian = ({ nama, deskripsi }) =>
   `<dt>${nama}</dt><dd>${deskripsi}</dd>`;
-
 const htmlKeahlian = daftarKeahlian.map(buatItemKeahlian).join("");
-
-// filter: array baru, bisa lebih pendek
 const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
-
-// find: SATU isi pertama yang cocok, atau undefined
 const proyekFigma = daftarProyek.find(
   (proyek) => proyek.judul === "Proyek UI/UX Figma"
 );
@@ -121,7 +117,7 @@ isiHalaman();
 
 function periksaData() {
   console.log("== B: sintaks dan tipe ==");
-  console.log(typeof profil.nama, typeof profil.jumlahProyek); // string number
+  console.log(typeof profil.nama, typeof profil.jumlahProyek); 
   console.log(`${profil.nama} belajar ${profil.keahlian.length} hal.`);
   console.log("alamat aman:", profil.alamat?.kota ?? "belum diisi");
   console.log("0 ?? 'x' =", 0 ?? "x", "| 0 || 'x' =", 0 || "x");
