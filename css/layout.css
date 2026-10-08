@@ -22,8 +22,7 @@
 /* B.2 navbar: flex, satu baris, jarak lewat gap */
 .kepala {
   display: flex;
-  flex-wrap: wrap;
-  /* baru turun baris bila benar-benar sempit */
+  flex-wrap: wrap;                /* baru turun baris bila benar-benar sempit */
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
@@ -35,8 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  flex: 1 1 20rem;
-  /* judul panjang membungkus, tidak mendorong menu */
+  flex: 1 1 20rem;                /* judul panjang membungkus, tidak mendorong menu */
   min-width: 0;
 }
 
@@ -82,16 +80,8 @@ nav a:hover {
   align-items: start;
 }
 
-.sisi {
-  grid-area: sisi;
-}
-
-.utama {
-  grid-area: utama;
-  min-width: 0;
-}
-
-/* kolom 1fr boleh menyusut */
+.sisi  { grid-area: sisi; }
+.utama { grid-area: utama; min-width: 0; }   /* kolom 1fr boleh menyusut */
 
 /* sidebar di layar sempit: mengalir biasa di atas konten */
 .sisi {
@@ -127,7 +117,7 @@ nav a:hover {
   padding-block: var(--space-8);
 }
 
-.utama>section {
+.utama > section {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);

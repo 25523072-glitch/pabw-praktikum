@@ -38,8 +38,7 @@ caption {
   border-bottom: 1px solid var(--color-border);
 }
 
-th,
-td {
+th, td {
   text-align: left;
   padding: var(--space-2) var(--space-3);
   border-bottom: 1px solid var(--color-border);
@@ -65,8 +64,7 @@ fieldset {
   border-radius: var(--radius-md);
   padding: var(--space-4);
   background: var(--color-surface);
-  min-width: 0;
-  /* fieldset bawaan tidak mau menyusut */
+  min-width: 0;                 /* fieldset bawaan tidak mau menyusut */
 }
 
 legend {
@@ -85,8 +83,7 @@ label {
   font-weight: 600;
 }
 
-input,
-textarea {
+input, textarea {
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -147,8 +144,7 @@ textarea:user-invalid {
 /* ---------- C.2 + E.1 Kartu: tinggi seragam, isi disusun grid/flex ---------- */
 .galeri .kartu {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  /* judul, isi lentur, kaki menempel di dasar */
+  grid-template-rows: auto 1fr auto;   /* judul, isi lentur, kaki menempel di dasar */
   gap: var(--space-2);
   min-height: 14rem;
   padding: var(--card-pad);
@@ -159,7 +155,7 @@ textarea:user-invalid {
 }
 
 /* E.2 isi panjang boleh menyusut, teks membungkus */
-.kartu>* {
+.kartu > * {
   min-width: 0;
 }
 
@@ -253,4 +249,39 @@ textarea:user-invalid {
 #tanya-jawab details[open] summary {
   padding-bottom: var(--space-2);
   color: var(--color-primary);
+}
+
+
+/* ---------- P9: filter, daftar proyek, dan validasi form ---------- */
+/* penanda tombol filter aktif: JavaScript hanya menambah/melepas kelas ini */
+.aktif {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+#filter button {
+  padding: var(--space-1) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+#daftar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#pesan-kosong,
+#status-form {
+  color: var(--color-muted);
 }

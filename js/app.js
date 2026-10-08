@@ -1,6 +1,3 @@
-//LEMBAR B — data halaman sebagai variabel
-
-// Daftar keahlian
 const daftarKeahlian = [
   {
     nama: "Jaringan komputer",
@@ -22,13 +19,12 @@ const daftarKeahlian = [
   },
 ];
 
-// Daftar proyek: array of object.
-
-const daftarProyek = [
+export const daftarProyek = [
   {
     judul: "Proyek Hako Tjeria",
     deskripsi: "Membangun aplikasi untuk mengatur stok bahan baku.",
     label: "Proyek kelompok",
+    kategori: "web",
     tahun: 2026,
     selesai: true,
     sorotan: true,
@@ -37,6 +33,7 @@ const daftarProyek = [
     judul: "Proyek UI/UX Figma",
     deskripsi: "Merancang antarmuka dan alur tampilan aplikasi.",
     label: "Desain",
+    kategori: "desain",
     tahun: 2026,
     selesai: true,
     sorotan: false,
@@ -47,14 +44,15 @@ const daftarProyek = [
       "Koordinasi live dan evaluasi pelanggaran untuk membantu " +
       "mengurangi violation TikTok.",
     label: "Pekerjaan",
+    kategori: "kerja",
     tahun: 2026,
-    selesai: false,
+    selesai: false, // masih berjalan
     sorotan: false,
   },
 ];
 
-// Identitas: satu object
-const profil = {
+// Identitas: satu object. Ditulis sekali, dipakai di <title>, <h1>, footer.
+export const profil = {
   nama: "DANIS SETIYAWAN",
   nim: "25523072",
   peran: "Mahasiswa Informatika Universitas Islam Indonesia",
@@ -62,38 +60,18 @@ const profil = {
     "Informatics Undergraduate Student at Universitas Islam Indonesia | " +
     "Host Coordinator at Buzzlive | Network Technician | Digital Business",
   tahun: 2026,
-  keahlian: daftarKeahlian.map((k) => k.nama),
-  jumlahProyek: daftarProyek.length,
+  keahlian: daftarKeahlian.map((k) => k.nama), // map: object -> teks
+  jumlahProyek: daftarProyek.length, // angka sungguhan, bukan "3"
 };
 
-// LEMBAR C — fungsi murni 
-
-// 1. Menyusun kalimat perkenalan dari satu object
 function buatPerkenalan({ nama, peran }) {
   return `${nama} — ${peran}`;
 }
 
-// 2. Merapikan daftar keahlian menjadi satu baris teks
 const formatKeahlian = (daftar, pemisah = " · ") => daftar.join(pemisah);
 
-// 3 & 4. Pembuat potongan HTML 
-const buatKartuProyek = ({ judul, deskripsi, label, sorotan }) => `
-        <article class="kartu${sorotan ? " sorotan" : ""}">
-          <h3>${judul}</h3>
-          <p>${deskripsi}</p>
-          <div class="kartu-kaki">
-            <span class="label">${label}</span>
-            <a href="#keterampilan">Keterampilan terkait</a>
-          </div>
-        </article>`;
-
-const buatItemKeahlian = ({ nama, deskripsi }) =>
   `<dt>${nama}</dt><dd>${deskripsi}</dd>`;
 
-// LEMBAR D — mengolah array 
-
-// map: array baru, panjang sama
-const htmlKartu = daftarProyek.map(buatKartuProyek).join("");
 const htmlKeahlian = daftarKeahlian.map(buatItemKeahlian).join("");
 
 // filter: array baru, bisa lebih pendek
@@ -104,13 +82,10 @@ const proyekFigma = daftarProyek.find(
   (proyek) => proyek.judul === "Proyek UI/UX Figma"
 );
 
-// Mengurutkan harus pada SALINAN 
 const proyekUrut = [...daftarProyek].sort((a, b) =>
   a.judul.localeCompare(b.judul)
 );
 
-// Tampilkan ke halaman
-// Mengambil elemen; bila tidak ada
 function ambil(selector) {
   const elemen = document.querySelector(selector);
   if (elemen === null) {
@@ -126,12 +101,11 @@ function isiHalaman() {
     ["header.kepala h1", "textContent", profil.nama],
     [".tagline", "textContent", profil.tagline],
     ["dl.keterampilan", "innerHTML", htmlKeahlian],
-    [".galeri", "innerHTML", htmlKartu],
     [
       "footer.kaki p",
       "innerHTML",
       `${profil.nama} · ${profil.nim} · ` +
-      `<time datetime="${profil.tahun}">${profil.tahun}</time>`,
+        `<time datetime="${profil.tahun}">${profil.tahun}</time>`,
     ],
   ];
 
@@ -145,8 +119,6 @@ function isiHalaman() {
 
 isiHalaman();
 
-// Pemeriksaan di Console 
-
 function periksaData() {
   console.log("== B: sintaks dan tipe ==");
   console.log(typeof profil.nama, typeof profil.jumlahProyek); // string number
@@ -157,7 +129,7 @@ function periksaData() {
 
   console.log("== C: fungsi murni ==");
   console.log(buatPerkenalan(profil));
-  console.log(buatPerkenalan({ nama: "Danis", peran: "mahasiswa" }));
+  console.log(buatPerkenalan({ nama: "Ayu", peran: "mahasiswa" }));
   console.log(formatKeahlian(profil.keahlian));
   console.log(formatKeahlian(["HTML", "CSS"], " / "));
 
@@ -176,7 +148,7 @@ function periksaData() {
   );
   console.log(
     "urutan asli utuh:",
-    daftarProyek[0].judul === "Proyek Hako Tjeria",
+    daftarProyek[0]?.judul === "Proyek Hako Tjeria",
     "| urutan salinan:",
     proyekUrut.map((p) => p.judul)
   );
@@ -184,7 +156,7 @@ function periksaData() {
   console.log("== Salinan dangkal ==");
   const salinan = { ...profil };
   salinan.nama = "NAMA UJI";
-  console.log("asli tetap:", profil.nama);
+  console.log("asli tetap:", profil.nama); // spread: aman untuk nilai biasa
 }
 
 periksaData();

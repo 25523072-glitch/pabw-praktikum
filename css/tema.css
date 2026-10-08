@@ -2,16 +2,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: var(--gray-900);
-    --color-fg: #E2E8F0;
-    --color-muted: #94A3B8;
-    --color-surface: #1E293B;
-    --color-border: #334155;
+    --color-bg:         var(--gray-900);
+    --color-fg:          #E2E8F0;
+    --color-muted:       #94A3B8;
+    --color-surface:     #1E293B;
+    --color-border:      #334155;
 
-    --color-primary: var(--blue-300);
-    --color-primary-fg: var(--gray-900);
-    --color-danger: var(--red-300);
-    --color-focus: var(--amber-400);
+    --color-primary:     var(--blue-300);
+    --color-primary-fg:  var(--gray-900);
+    --color-danger:      var(--red-300);
+    --color-focus:       var(--amber-400);
 
     --shadow-1: 0 1px 3px rgba(0, 0, 0, .45);
     --shadow-2: 0 4px 14px rgba(0, 0, 0, .5);
@@ -43,22 +43,22 @@
   user-select: none;
 }
 
-.pengalih-tema:focus-visible+.tombol-tema {
+.pengalih-tema:focus-visible + .tombol-tema {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
 :root:has(#tema:checked) {
-  --color-bg: var(--gray-900);
-  --color-fg: #E2E8F0;
-  --color-muted: #94A3B8;
-  --color-surface: #1E293B;
-  --color-border: #334155;
+  --color-bg:         var(--gray-900);
+  --color-fg:          #E2E8F0;
+  --color-muted:       #94A3B8;
+  --color-surface:     #1E293B;
+  --color-border:      #334155;
 
-  --color-primary: var(--blue-300);
-  --color-primary-fg: var(--gray-900);
-  --color-danger: var(--red-300);
-  --color-focus: var(--amber-400);
+  --color-primary:     var(--blue-300);
+  --color-primary-fg:  var(--gray-900);
+  --color-danger:      var(--red-300);
+  --color-focus:       var(--amber-400);
 
   --shadow-1: 0 1px 3px rgba(0, 0, 0, .45);
   --shadow-2: 0 4px 14px rgba(0, 0, 0, .5);
