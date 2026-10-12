@@ -1,4 +1,4 @@
-const ALAMAT = 'https/jsonplaceholde.com/posts'; 
+const ALAMAT = 'https://jsonplaceholder.typicode.com/posts';  
 
 export async function ambilNotisia() {
   try {
@@ -9,7 +9,7 @@ export async function ambilNotisia() {
     
     console.log('Data dari API:', data);
     
-    return data;
+    return [];
   } catch (galat) {
     console.error('gagal memuat', galat.message);
     throw galat;
