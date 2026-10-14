@@ -89,11 +89,11 @@ export function render(state) {
   }
   if (kosong) kosong.hidden = true;
 
-  const fragmen = document.createDocumentFragment();
+const fragmen = document.createDocumentFragment();
   tampil.forEach((proyek) => fragmen.append(buatKartu(proyek)));
   wadah.append(fragmen);
 
-  if (barisFilter) {
+if (barisFilter) {
     barisFilter.querySelectorAll("button").forEach((tombol) => {
       const aktif = tombol.dataset.kategori === state.kategoriAktif;
       tombol.classList.toggle("aktif", aktif);
