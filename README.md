@@ -6,3 +6,5 @@ saya menggunakan AI untuk, pertama : menjelaskan todo yang harus saya lakukan di
 1. Status 404: Diuji dengan mengubah URL menjadi salah. Ditangani oleh pengecekan `if (!respons.ok)` pada `js/api.js`.
 2. Await di luar async: Semua `await` sudah berada di dalam fungsi `async`.
 3. Data Kosong: Diuji dengan array `[]`. Halaman menampilkan pesan "Belum ada notisia".
+
+Lembar A pertemuan 11 done, sudah dikerjakan semua
