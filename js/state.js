@@ -1,5 +1,6 @@
 import { daftarProyek } from "./data.js";
 import { render } from "./dom.js";
+import { simpan, aturUlang as hapusSimpanan } from "./storage.js";
 
 export const state = {
   kategoriAktif: "semua",
@@ -8,5 +9,12 @@ export const state = {
 
 export function pilihKategori(kategori) {
   state.kategoriAktif = kategori;
-  render(state); 
+  simpan(state); 
+  render(state);
+}
+
+export function resetState() {
+  hapusSimpanan();
+  state.kategoriAktif = "semua";
+  render(state);
 }

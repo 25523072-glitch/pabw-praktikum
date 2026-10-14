@@ -1,4 +1,4 @@
-import { pilihKategori } from "./state.js";
+import { pilihKategori, resetState } from "./state.js";
 import { periksaKolom, perbaruiTombol, bersihkanForm } from "./dom.js";
 
 const barisFilter = document.querySelector("#filter");
@@ -55,7 +55,17 @@ export function pasangForm() {
   });
 }
 
+export function pasangReset() {
+  const tombolReset = document.querySelector("#tombol-reset");
+  if (tombolReset) {
+    tombolReset.addEventListener("click", () => {
+      resetState();
+    });
+  }
+}
+
 export function pasangPendengar() {
   pasangFilter();
   pasangForm();
+  pasangReset();
 }
