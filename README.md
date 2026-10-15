@@ -8,3 +8,6 @@ saya menggunakan AI untuk, pertama : menjelaskan todo yang harus saya lakukan di
 3. Data Kosong: Diuji dengan array `[]`. Halaman menampilkan pesan "Belum ada notisia".
 
 Lembar A pertemuan 11 done, sudah dikerjakan semua
+
+node -v	24.20.0
+npm -v	11.19.0
