@@ -1,0 +1,45 @@
+/* dasar: berlaku di semua lebar */
+.isi {                              
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.galeri {                          
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.page { grid-template-columns: minmax(0, 1fr); }
+h1, h2, h3, dt, dd, summary, li { overflow-wrap: anywhere; }
+nav ul { flex-wrap: wrap; }
+
+/* tablet */
+@media (min-width: 48rem) {
+  .galeri { grid-template-columns: repeat(2, 1fr); }
+  .galeri .sorotan { grid-column: span 2; }   
+}
+
+/* desktop */
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem 1fr;
+    grid-template-areas: "sisi utama";
+    gap: var(--space-6);
+  }
+
+  .sisi {
+    position: sticky;
+    top: var(--space-4);
+    padding-block: var(--space-8);
+  }
+
+  .menu-samping ul {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .galeri { grid-template-columns: repeat(3, 1fr); }
+  .galeri .sorotan { grid-column: auto; }     
+}
