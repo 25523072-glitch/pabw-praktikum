@@ -1,0 +1,70 @@
+/* H.1 — mengikuti pengaturan sistem pengguna secara otomatis */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:         var(--gray-900);
+    --color-fg:          #E2E8F0;
+    --color-muted:       #94A3B8;
+    --color-surface:     #1E293B;
+    --color-border:      #334155;
+
+    --color-primary:     var(--blue-300);
+    --color-primary-fg:  var(--gray-900);
+    --color-danger:      var(--red-300);
+    --color-focus:       var(--amber-400);
+
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, .45);
+    --shadow-2: 0 4px 14px rgba(0, 0, 0, .5);
+  }
+}
+
+/* H.2 — pengalih tema manual*/
+
+/* kotak centang disembunyikan dari mata tapi tetap bisa dijangkau Tab */
+.pengalih-tema {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  background: var(--color-surface);
+  user-select: none;
+}
+
+/* label ikut terlihat "berfokus" saat checkbox di belakangnya berfokus,
+   supaya pengguna papan ketik tetap tahu sedang berada di kontrol ini */
+.pengalih-tema:focus-visible + .tombol-tema {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Pilihan MANUAL harus ditulis SETELAH blok media query supaya menang
+   saat keduanya menyala bersamaan (mis. sistem gelap, pengguna memilih
+   terang secara manual). */
+:root:has(#tema:checked) {
+  --color-bg:         var(--gray-900);
+  --color-fg:          #E2E8F0;
+  --color-muted:       #94A3B8;
+  --color-surface:     #1E293B;
+  --color-border:      #334155;
+
+  --color-primary:     var(--blue-300);
+  --color-primary-fg:  var(--gray-900);
+  --color-danger:      var(--red-300);
+  --color-focus:       var(--amber-400);
+
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, .45);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, .5);
+}
