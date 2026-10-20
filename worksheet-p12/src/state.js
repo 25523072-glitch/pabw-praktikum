@@ -1,20 +1,11 @@
-import { daftarProyek } from "./data.js";
-import { render } from "./dom.js";
-import { simpan, aturUlang as hapusSimpanan } from "./storage.js";
+import { reactive } from 'vue'
+import { daftarProyek } from './data.js'
 
-export const state = {
-  kategoriAktif: "semua",
+export const state = reactive({
   daftarProyek: daftarProyek,
-};
+  kategoriAktif: 'semua',
+})
 
-export function pilihKategori(kategori) {
-  state.kategoriAktif = kategori;
-  simpan(state); 
-  render(state);
-}
-
-export function resetState() {
-  hapusSimpanan();
-  state.kategoriAktif = "semua";
-  render(state);
+export function pilihKategori(nilai) {
+  state.kategoriAktif = nilai   
 }

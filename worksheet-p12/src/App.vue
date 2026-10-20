@@ -138,6 +138,6 @@ watch(state, (nilai) => simpan(nilai), { deep: true })
   </div>
 
   <footer class="kaki">
-    <p>{{ profil.nama }} · {{ profil.nim }} · {{ profil.tahun }}</p>
+    <p>{{ profil.nama }} · {{ profil.nim }} · <time :datetime="profil.tahun">{{ profil.tahun }}</time></p>
   </footer>
 </template>
