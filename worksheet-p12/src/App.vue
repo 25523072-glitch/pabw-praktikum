@@ -1,4 +1,10 @@
+<script setup>
+import KepalaProfil from './components/KepalaProfil.vue'
+import TombolFilter from './components/TombolFilter.vue'
+import { profil } from './data.js'
+</script>
+
 <template>
-  <h1>Halaman Anda</h1>
-  <p>Bagian halaman dipindahkan di lembar D.</p>
+  <KepalaProfil :profil="profil" />
+  <TombolFilter />
 </template>
